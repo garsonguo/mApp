@@ -18,4 +18,12 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 问题记录
+1. 下载模板后须设置eslint，否则编译会报错
+新建.editorconfig/.eslintignore/.eslinttrc.js三个文件
+2. 忽略不上传git的文件
+新建.gitignore
+3. 格式化代码用vetur插件的格式化功能
+4. 移动端自适应方案
+下载px2rem-loader插件，在utils.js中增加px2remLoader对象
+下载lib-flexiable,在main.js中引入
