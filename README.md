@@ -27,3 +27,7 @@ npm run build --report
 4. 移动端自适应方案
 下载px2rem-loader插件，在utils.js中增加px2remLoader对象
 下载lib-flexiable,在main.js中引入
+5. vue怎么使用阿里矢量图标库
+参照：https://blog.csdn.net/qq_32113629/article/details/79740949
+报错，许增加postcss.config.js配置文件进行相应配置
+6. vue中使用less需要安装less less-loader

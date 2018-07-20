@@ -1,16 +1,18 @@
 <template>
     <div>
       <Header></Header>
-        {{msg}}
+      <Swiper></Swiper>
     </div>
 </template>
 
 <script>
 import Header from '@/common/Header.vue'
+import Swiper from './Swiper.vue'
 export default {
   name: 'Home',
   components: {
-    Header
+    Header,
+    Swiper
   },
   data () {
     return {
