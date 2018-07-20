@@ -4,8 +4,8 @@
         <i class="iconfont icon-pinglun"></i>
         <p>消息</p>
       </router-link>
-      <router-link to="/Home">
-      <i class="iconfont icon-fangzi"></i>
+      <router-link class="router-link-exact-active router-link-active" to="/Home">
+        <i class="iconfont icon-fangzi"></i>
         <p>主页</p>
       </router-link>
       <router-link to="/Contacts">

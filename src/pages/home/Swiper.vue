@@ -61,13 +61,13 @@ export default {
 .swiper{
     .swiper-container{
         width: 100%;
-        height: 340px;
+        height: 400px;
     }
     .swiper-slide a{
         display: block;
         img{
             width: 100%;
-            height: 340px;
+            height: 400px;
         }
     }
 }

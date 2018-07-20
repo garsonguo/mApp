@@ -31,3 +31,5 @@ npm run build --report
 参照：https://blog.csdn.net/qq_32113629/article/details/79740949
 报错，许增加postcss.config.js配置文件进行相应配置
 6. vue中使用less需要安装less less-loader
+7. vue开发中常用插件：https://blog.csdn.net/mr_hexs/article/details/80374950
+主要解决：移动端点击事件延迟300毫秒、移动端1像素边框问题、滑动插件、
