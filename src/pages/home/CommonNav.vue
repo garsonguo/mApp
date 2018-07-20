@@ -116,22 +116,6 @@ export default {}
                         color: #fff;
                     }
                 }
-                .green{
-                    background-color: #1bc296;
-                    border: 1px solid #1bc296;
-                }
-                .blue{
-                    background-color: #4da9ec;
-                    border: 1px solid #4da9ec;
-                }
-                .red{
-                    background-color: #f3725d;
-                    border:1px solid #f3725d;
-                }
-                .yellow{
-                    background-color: #f7b55e;
-                    border: 1px solid #f7b55e;
-                }
             }
         }
     }

@@ -12,6 +12,7 @@ import Header from '@/common/Header.vue'
 import Swiper from './Swiper.vue'
 import SubNav from './SubNav.vue'
 import CommonNav from './CommonNav.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -22,7 +23,7 @@ export default {
   },
   data () {
     return {
-      msg: '我是主页'
+      infoList: []
     }
   }
 }

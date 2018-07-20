@@ -8,6 +8,7 @@ import fastClick from 'fastclick'
 
 import 'lib-flexible/flexible'
 import './assets/css/reset.css'
+import './assets/css/common.css'
 import './assets/css/border.css'
 import './assets/fonts/iconfont.css'
 import 'swiper/dist/css/swiper.css'

@@ -54,6 +54,7 @@ export default {
             border-right: 0;
         }
         .logo{
+            //转换为rem会导致radius时边框糊掉
             border: 1px solid #ddd;/*px*/
             height: 80px;
             width: 80px;
