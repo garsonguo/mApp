@@ -2,24 +2,9 @@
     <div class="swiper">
         <swiper :options="swiperOption" ref="mySwiper">
             <!-- slides -->
-            <swiper-slide>
+            <swiper-slide v-for="item of swiperLists" :key="item.id">
                 <a href="#">
-                    <img src="../../assets/imgs/1.jpg">
-                </a>
-            </swiper-slide>
-            <swiper-slide>
-                <a href="#">
-                    <img src="../../assets/imgs/2.jpg">
-                </a>
-            </swiper-slide>
-            <swiper-slide>
-                <a href="#">
-                    <img src="../../assets/imgs/3.jpg">
-                </a>
-            </swiper-slide>
-            <swiper-slide>
-                <a href="#">
-                    <img src="../../assets/imgs/4.jpg">
+                    <img :src=item.img>
                 </a>
             </swiper-slide>
             <!-- Optional controls -->
@@ -36,6 +21,9 @@ export default {
     swiper,
     swiperSlide
   },
+  props: {
+    swiperList: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -47,12 +35,10 @@ export default {
     }
   },
   computed: {
-    swiper () {
-      return this.$refs.mySwiper.swiper
+    swiperLists () {
+      const swiperList = this.swiperList
+      return swiperList
     }
-  },
-  mounted () {
-    // this.swiper.slideTo(3, 1000, false)
   }
 }
 </script>

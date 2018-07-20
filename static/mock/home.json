@@ -1,0 +1,18 @@
+{
+    "ret":true,
+    "data":{
+        "swiperList":[{
+            "id":1,
+            "img":"http://localhost:8080/static/imgs/1.jpg"
+        },{
+            "id":2,
+            "img":"http://localhost:8080/static/imgs/2.jpg"
+        },{
+            "id":3,
+            "img":"http://localhost:8080/static/imgs/3.jpg"
+        },{
+            "id":4,
+            "img":"http://localhost:8080/static/imgs/4.jpg"
+        }]
+    }
+}

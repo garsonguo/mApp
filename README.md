@@ -36,3 +36,5 @@ npm run build --report
 8. vue中使用axios  
 安装axios npm install axios
 配置config/index.js 中proxyTable 为静态资源的路径
+9. 图片路径处理问题
+把图片放到static中处理等

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header></Header>
+        <Header :title='title'></Header>
         <List :infoList='infoList'></List>
     </div>
 </template>
@@ -17,7 +17,8 @@ export default {
   },
   data () {
     return {
-      infoList: []
+      infoList: [],
+      title: ''
     }
   },
   mounted () {
@@ -33,6 +34,7 @@ export default {
       if (res.ret && res.data) {
         const data = res.data
         this.infoList = data.infoList
+        this.title = data.title
       }
     }
   }
