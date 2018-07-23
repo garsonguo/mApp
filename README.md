@@ -40,3 +40,5 @@ npm run build --report
 把图片放到static中处理等
 10. 动态组件传值
 参照subNav.vue组件
+11. 滚动插件better-scroll npm install better-scroll
+https://github.com/ustbhuangyi/better-scroll/blob/master/README_zh-CN.md

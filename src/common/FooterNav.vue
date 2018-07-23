@@ -34,6 +34,7 @@ export default {}
   justify-content: space-around;
   align-items: center;
   border-top: 1px solid #ddd;
+  background-color: #fff;
   a {
     text-decoration: none;
     text-align: center;

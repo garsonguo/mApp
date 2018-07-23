@@ -20,15 +20,20 @@ export default {
 
 <style scoped lang='less'>
 .header{
-    height: 70px;
-    line-height: 70px;
-    padding: 0 20px;
-    border-bottom: 1px solid #ddd;
-    .left{
-      float: left;
-    }
-    .right{
-      float: right;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  height: 70px;
+  line-height: 70px;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd;
+  .left{
+    float: left;
+  }
+  .right{
+    float: right;
+  }
 }
 </style>

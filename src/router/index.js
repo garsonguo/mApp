@@ -11,7 +11,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: My
+      redirect: Contacts
     },
     {
       path: '/Home',
