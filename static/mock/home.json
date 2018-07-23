@@ -1,6 +1,7 @@
 {
     "ret":true,
     "data":{
+        "title":"管理员",
         "swiperList":[{
             "id":1,
             "img":"http://localhost:8080/static/imgs/1.jpg"
@@ -13,6 +14,58 @@
         },{
             "id":4,
             "img":"http://localhost:8080/static/imgs/4.jpg"
+        }],
+        "subNavList":[{
+            "id":1,
+            "logo":"10",
+            "logoName":"待我办理",
+            "isIcon":"noIcon"
+        },{
+            "id":2,
+            "logo":"4",
+            "logoName":"新邮件",
+            "isIcon":"noIcon"
+        },{
+            "id":3,
+            "logo":"iconfont icon-shijian",
+            "logoName":"登录时间",
+            "isIcon":"isIcon"
+        },{
+            "id":4,
+            "logo":"iconfont icon-rili",
+            "logoName":"日程安排",
+            "isIcon":"isIcon"
+        }],
+        "commonNavList":[{
+            "id":1,
+            "color":"green",
+            "icon":"icon-daiban",
+            "logoName":"待办案卷"
+        },{
+            "id":2,
+            "color":"blue",
+            "icon":"icon-shouwen",
+            "logoName":"公文收文"
+        },{
+            "id":3,
+            "color":"red",
+            "icon":"icon-fawen",
+            "logoName":"公文发文"
+        },{
+            "id":4,
+            "color":"yellow",
+            "icon":"icon-yuewen",
+            "logoName":"公共阅文"
+        },{
+            "id":5,
+            "color":"red",
+            "icon":"icon-youxiang",
+            "logoName":"内部邮件"
+        },{
+            "id":6,
+            "color":"yellow",
+            "icon":"icon-jingdianwanfa",
+            "logoName":"政务信息"
         }]
     }
 }

@@ -1,9 +1,9 @@
 <template>
     <div>
-      <Header></Header>
+      <Header :title="title"></Header>
       <Swiper :swiperList='swiperList'></Swiper>
-      <sub-nav></sub-nav>
-      <common-nav></common-nav>
+      <sub-nav :subNavList='subNavList'></sub-nav>
+      <common-nav :commonNavList='commonNavList'></common-nav>
     </div>
 </template>
 
@@ -23,7 +23,10 @@ export default {
   },
   data () {
     return {
-      swiperList: []
+      swiperList: [],
+      title: '',
+      subNavList: [],
+      commonNavList: []
     }
   },
   mounted () {
@@ -39,6 +42,9 @@ export default {
       if (res.ret && res.data) {
         const data = res.data
         this.swiperList = data.swiperList
+        this.title = data.title
+        this.subNavList = data.subNavList
+        this.commonNavList = data.commonNavList
       }
     }
   }

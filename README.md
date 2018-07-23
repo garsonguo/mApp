@@ -38,3 +38,5 @@ npm run build --report
 配置config/index.js 中proxyTable 为静态资源的路径
 9. 图片路径处理问题
 把图片放到static中处理等
+10. 动态组件传值
+参照subNav.vue组件

@@ -1,31 +1,9 @@
 <template>
     <div class="subNav">
-        <div class="panel">
-            <div class="logo">10</div>
+        <div class="panel" v-for="item of subNavList" :key="item.id">
+            <component v-bind:is="item.isIcon" :logo=item.logo></component>
             <div class="logoName">
-                待我办理
-            </div>
-        </div>
-        <div class="panel">
-            <div class="logo">4</div>
-            <div class="logoName">
-                新邮件
-            </div>
-        </div>
-        <div class="panel">
-            <div class="logo">
-                <i class="iconfont icon-shijian"></i>
-            </div>
-            <div class="logoName">
-                登录时间
-            </div>
-        </div>
-        <div class="panel">
-            <div class="logo">
-                <i class="iconfont icon-rili"></i>
-            </div>
-            <div class="logoName">
-                日程安排
+                {{item.logoName}}
             </div>
         </div>
     </div>
@@ -33,7 +11,26 @@
 
 <script>
 export default {
-  name: 'SubNav'
+  name: 'SubNav',
+  props: {
+    subNavList: Array
+  },
+  components: {
+    noIcon: {
+      name: 'noIcon',
+      props: {
+        logo: String
+      },
+      template: '<div class="logo" >{{logo}}</div>'
+    },
+    isIcon: {
+      name: 'isIcon',
+      props: {
+        logo: String
+      },
+      template: '<div class="logo" ><i :class=logo style="display:block;"></i></div>'
+    }
+  }
 }
 </script>
 

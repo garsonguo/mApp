@@ -9,9 +9,10 @@
 
 <script>
 export default {
-  data () {
-    return {
-      title: '管理员'
+  props: {
+    title: {
+      type: String,
+      default: '管理员'
     }
   }
 }
