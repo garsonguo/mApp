@@ -1,13 +1,13 @@
 <template>
     <div>
         <Header :title='title'></Header>
-        <List :infoList='infoList'></List>
+        <List class="list" :infoList='infoList'></List>
     </div>
 </template>
 
 <script>
-import Header from './Header.vue'
-import List from './List.vue'
+import Header from '../../common/CommonHeader.vue'
+import List from './components/List.vue'
 import axios from 'axios'
 export default {
   name: 'Info',
@@ -41,5 +41,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='less'>
+.list{
+  margin-top: 70px;
+}
 </style>

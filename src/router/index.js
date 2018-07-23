@@ -11,12 +11,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: Contacts
+      redirect: Home
     },
     {
       path: '/Home',
       name: 'Home',
-      component: Home
+      component: Home,
+      children: [{
+        path: '/ajbl',
+        component: Home
+      }]
     },
     {
       path: '/Info',

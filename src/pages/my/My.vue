@@ -8,8 +8,8 @@
 
 <script>
 import CommonHeader from '../../common/CommonHeader.vue'
-import MyInfo from './MyInfo.vue'
-import MyList from './MyList.vue'
+import MyInfo from './components/MyInfo.vue'
+import MyList from './components/MyList.vue'
 export default {
   name: 'My',
   components: {
@@ -25,5 +25,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='less'>
 </style>

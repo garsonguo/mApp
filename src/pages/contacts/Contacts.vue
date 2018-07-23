@@ -8,8 +8,8 @@
 
 <script>
 import Header from '../../common/Header.vue'
-import List from './List.vue'
-import Aside from './Aside.vue'
+import List from './components/List.vue'
+import Aside from './components/Aside.vue'
 import axios from 'axios'
 export default {
   name: 'Contacts',

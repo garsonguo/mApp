@@ -1,7 +1,7 @@
 <template>
     <div>
       <Header :title="title"></Header>
-      <Swiper :swiperList='swiperList'></Swiper>
+      <Swiper class="swiper" :swiperList='swiperList'></Swiper>
       <sub-nav :subNavList='subNavList'></sub-nav>
       <common-nav :commonNavList='commonNavList'></common-nav>
     </div>
@@ -9,9 +9,9 @@
 
 <script>
 import Header from '@/common/Header.vue'
-import Swiper from './Swiper.vue'
-import SubNav from './SubNav.vue'
-import CommonNav from './CommonNav.vue'
+import Swiper from './components/Swiper.vue'
+import SubNav from './components/SubNav.vue'
+import CommonNav from './components/CommonNav.vue'
 import axios from 'axios'
 export default {
   name: 'Home',
@@ -51,5 +51,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='less'>
+.swiper{
+  margin-top: 70px;
+}
 </style>

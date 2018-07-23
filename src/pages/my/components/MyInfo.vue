@@ -1,7 +1,7 @@
 <template>
     <div class="myInfo">
         <div class="myImg">
-            <img src="../../../static/imgs/head.jpg" alt="头像">
+            <img src="../../../../static/imgs/head.jpg" alt="头像">
         </div>
         <div class="myFunc">
             <div class="info">
@@ -26,6 +26,7 @@ export default {
     height: 400px;
     overflow: hidden;
     margin: 20px;
+    margin-top: 90px;
     border: 1px solid #ddd;/*px*/
     border-radius: 10px;
     position: relative;

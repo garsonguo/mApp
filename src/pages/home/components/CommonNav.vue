@@ -5,14 +5,14 @@
         </div>
         <div class="body">
             <div class="panel" v-for="item of commonNavList" :key="item.id">
-                <div class="item">
+                <a class="item" :href='item.href'>
                     <div class="logo" :class="item.color">
                         <i class="iconfont" :class="item.icon"></i>
                     </div>
                     <div class="logoName">
                         {{item.logoName}}
                     </div>
-                </div>
+                </a>
             </div>
             <div class="panel"></div>
             <div class="panel"></div>
@@ -25,6 +25,8 @@ export default {
   name: 'CommonNav',
   props: {
     commonNavList: Array
+  },
+  methods: {
   }
 }
 </script>
