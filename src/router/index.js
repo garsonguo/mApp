@@ -18,11 +18,13 @@ const router = new Router({
     {
       path: '/Login',
       name: 'Login',
+      title: '登录',
       component: Login
     },
     {
       path: '/Home',
       name: 'Home',
+      title: '首页',
       component: Home,
       children: [{
         path: '/ajbl',
@@ -59,20 +61,19 @@ router.beforeEach((to, from, next) => {
     // 获取store的state并修改
     router.app.$options.store.state.navShow = true
   }
-  if ((!Cookies.get('name') && name !== 'Login') || (!Cookies.get('name') && name === 'Login')) {
+  if ((!Cookies.get('name') && name !== 'Login')) {
+    router.app.$options.store.state.navShow = false
     // 判断是否已经登录且前往的页面不是登录页
     next({
-      name: 'Login'
+      path: '/Login'
     })
   } else if (Cookies.get('name') && name === 'Login') {
     // 判断是否已经登录且前往的是登录页
     next({
-      name: 'Home'
+      path: '/Home'
     })
   } else {
-    next({
-      name: 'Home'
-    })
+    next()
   }
 })
 
