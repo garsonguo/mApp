@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    navShow: false
+    navShow: false,
+    auth: false
   },
   actions: {},
   mutations: {}

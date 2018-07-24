@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Cookies from 'js-cookie'
 import Info from '@/pages/info/Info'
 import Home from '@/pages/home/Home'
 import Contacts from '@/pages/contacts/Contacts'
@@ -58,7 +59,21 @@ router.beforeEach((to, from, next) => {
     // 获取store的state并修改
     router.app.$options.store.state.navShow = true
   }
-  next()
+  if ((!Cookies.get('name') && name !== 'Login') || (!Cookies.get('name') && name === 'Login')) {
+    // 判断是否已经登录且前往的页面不是登录页
+    next({
+      name: 'Login'
+    })
+  } else if (Cookies.get('name') && name === 'Login') {
+    // 判断是否已经登录且前往的是登录页
+    next({
+      name: 'Home'
+    })
+  } else {
+    next({
+      name: 'Home'
+    })
+  }
 })
 
 export default router

@@ -38,6 +38,7 @@ export default {
         if (result) {
           Cookies.set('name', this.name)
           Cookies.set('password', this.password)
+          Cookies.set('auth', true)
           this.$router.push({
             name: 'Home'
           })
