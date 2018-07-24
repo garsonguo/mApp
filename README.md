@@ -42,3 +42,8 @@ npm run build --report
 参照subNav.vue组件
 11. 滚动插件better-scroll npm install better-scroll
 https://github.com/ustbhuangyi/better-scroll/blob/master/README_zh-CN.md
+12. vue-router全局守卫-> https://www.cnblogs.com/minigrasshopper/p/7928311.html
+路由里面怎么调用vuex-> https://segmentfault.com/q/1010000007871328
+13. 操作cookie   npm install js-cookie
+14. 表单验证工具 vee-validate  参照官网   网上教程大部分已过时（涉及API已经废除）
+https://baianat.github.io/vee-validate/guide/messages.html#field-specific-custom-messages

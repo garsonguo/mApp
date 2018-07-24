@@ -4,14 +4,20 @@ import Info from '@/pages/info/Info'
 import Home from '@/pages/home/Home'
 import Contacts from '@/pages/contacts/Contacts'
 import My from '@/pages/my/My'
+import Login from '@/pages/login/Login'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
-      redirect: Home
+      redirect: Login
+    },
+    {
+      path: '/Login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/Home',
@@ -39,3 +45,20 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  // 全局路由守卫
+  // to: Route: 即将要进入的目标 路由对象
+  // from: Route: 当前导航正要离开的路由
+  // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
+  const name = to.name
+  if (name === 'Login') {
+    router.app.$options.store.state.navShow = false
+  } else {
+    // 获取store的state并修改
+    router.app.$options.store.state.navShow = true
+  }
+  next()
+})
+
+export default router
