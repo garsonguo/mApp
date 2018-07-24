@@ -68,11 +68,13 @@ router.beforeEach((to, from, next) => {
       path: '/Login'
     })
   } else if (Cookies.get('name') && name === 'Login') {
+    router.app.$options.store.state.navShow = true
     // 判断是否已经登录且前往的是登录页
     next({
       path: '/Home'
     })
   } else {
+    router.app.$options.store.state.navShow = true
     next()
   }
 })
