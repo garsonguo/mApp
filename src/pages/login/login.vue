@@ -36,9 +36,12 @@ export default {
     validateBeforeSubmit () {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          Cookies.set('name', this.name)
-          Cookies.set('password', this.password)
-          Cookies.set('auth', true)
+          const loginInfo = {
+            name: this.name,
+            password: this.password,
+            auth: true
+          }
+          Cookies.set('loginInfo', loginInfo)
           this.$router.push({
             name: 'Home'
           })

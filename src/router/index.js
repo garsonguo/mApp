@@ -61,15 +61,17 @@ router.beforeEach((to, from, next) => {
     // 获取store的state并修改
     router.app.$options.store.state.navShow = true
   }
-  if (!Cookies.get('name') && name !== 'Login') {
-    router.app.$options.store.state.navShow = false
+  // 获取用户信息
+  const userKey = Cookies.get('loginInfo')
+  if (!userKey && name !== 'Login') {
     // 判断是否已经登录且前往的页面不是登录页
+    router.app.$options.store.state.navShow = false
     next({
       path: '/Login'
     })
-  } else if (Cookies.get('name') && name === 'Login') {
-    router.app.$options.store.state.navShow = true
+  } else if (userKey && name === 'Login') {
     // 判断是否已经登录且前往的是登录页
+    router.app.$options.store.state.navShow = true
     next({
       path: '/Home'
     })

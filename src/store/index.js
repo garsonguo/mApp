@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import Cookies from 'js-cookie'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -8,6 +8,15 @@ export default new Vuex.Store({
     navShow: false,
     auth: false
   },
-  actions: {},
-  mutations: {}
+  actions: {
+    LoginOut (context) {
+      context.commit('LoginOut')
+    }
+  },
+  mutations: {
+    LoginOut () {
+      Cookies.remove('loginInfo')
+      this.state.auth = false
+    }
+  }
 })

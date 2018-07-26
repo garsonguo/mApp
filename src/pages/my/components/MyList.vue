@@ -21,7 +21,7 @@
                 <div class="icon">
                     <i class="iconfont icon-guanbi"></i>
                 </div>
-                <div class="info">清除缓存
+                <div @click="loginOut" class="info">退出登录
                     <i class="iconfont icon-jinrujiantou"></i>
                 </div>
             </div>
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+// import { mapMutations } from 'vuex'
 export default {
   name: 'MyList',
   data () {
@@ -57,7 +58,17 @@ export default {
     },
     ok () {
       this.show = false
+    },
+    loginOut () {
+      this.$store.dispatch('LoginOut')
+        .then(() => {
+          this.$router.push({
+            'path': '/Login',
+            'name': 'Login'
+          })
+        })
     }
+    // ...mapMutations(['LoginOut'])
   }
 }
 </script>

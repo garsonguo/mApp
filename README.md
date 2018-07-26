@@ -45,5 +45,12 @@ https://github.com/ustbhuangyi/better-scroll/blob/master/README_zh-CN.md
 12. vue-router全局守卫-> https://www.cnblogs.com/minigrasshopper/p/7928311.html
 路由里面怎么调用vuex-> https://segmentfault.com/q/1010000007871328
 13. 操作cookie   npm install js-cookie
+github:https://github.com/js-cookie/js-cookie
 14. 表单验证工具 vee-validate  参照官网   网上教程大部分已过时（涉及API已经废除）
 https://baianat.github.io/vee-validate/guide/messages.html#field-specific-custom-messages
+15. vuex使用案例
+https://www.cnblogs.com/SamWeb/p/6543931.html
+vuex使用中注意的点: https://www.jianshu.com/p/3391cfb1180e
+16. vue中编译mapMutations等报错
+https://blog.csdn.net/xdongll/article/details/74295299
+这个链接提供了思路，具体参考配置文件.babelrc
