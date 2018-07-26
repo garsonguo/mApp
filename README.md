@@ -54,3 +54,6 @@ vuex使用中注意的点: https://www.jianshu.com/p/3391cfb1180e
 16. vue中编译mapMutations等报错
 https://blog.csdn.net/xdongll/article/details/74295299
 这个链接提供了思路，具体参考配置文件.babelrc
+17. vuex中如何做路由跳转
+https://segmentfault.com/q/1010000007333415?_ea=1312601
+注：在commit或者dispatch时，将router作为参数传过去

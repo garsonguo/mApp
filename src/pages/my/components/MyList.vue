@@ -60,6 +60,7 @@ export default {
       this.show = false
     },
     loginOut () {
+      // dispatch 返回的是Promise  所以有then回调
       this.$store.dispatch('LoginOut')
         .then(() => {
           this.$router.push({
