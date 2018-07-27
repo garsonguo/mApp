@@ -7,6 +7,8 @@ import Contacts from '@/pages/contacts/Contacts'
 import My from '@/pages/my/My'
 import Login from '@/pages/login/Login'
 import Todo from '@/pages/todo/Todo'
+import Read from '@/pages/read/Read'
+import List from '@/pages/read/components/List'
 
 Vue.use(Router)
 
@@ -57,12 +59,45 @@ const router = new Router({
       }
     },
     {
-      path: '/Todo',
+      path: '/Todo/1',
       name: 'Todo',
       component: Todo,
       meta: {
         title: '代办案卷'
       }
+    },
+    {
+      path: '/Todo/2',
+      name: 'Todo',
+      component: Todo,
+      meta: {
+        title: '公共收文'
+      }
+    },
+    {
+      path: '/Todo/3',
+      name: 'Todo',
+      component: Todo,
+      meta: {
+        title: '公共发文'
+      }
+    },
+    {
+      path: '/Read',
+      name: 'Read',
+      component: Read,
+      redirect: '/Read/List/1', // 嵌套默认路由
+      meta: {
+        title: '公共阅文'
+      },
+      children: [{
+        path: 'List/:id',
+        name: 'List',
+        component: List,
+        meta: {
+          title: '公共阅文'
+        }
+      }]
     }
   ]
 })

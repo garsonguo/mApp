@@ -76,8 +76,7 @@ export default {
         }
         .title{
             line-height: 1.5;
-            font-size: 32px;/*px*/
-            font-weight: bolder;
+            font-size: 28px;/*px*/
         }
         .info{
             line-height: 1.7;
