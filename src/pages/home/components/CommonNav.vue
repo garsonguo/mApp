@@ -5,14 +5,14 @@
         </div>
         <div class="body">
             <div class="panel" v-for="item of commonNavList" :key="item.id">
-                <a class="item" :href='item.href'>
-                    <div class="logo" :class="item.color">
-                        <i class="iconfont" :class="item.icon"></i>
-                    </div>
-                    <div class="logoName">
-                        {{item.logoName}}
-                    </div>
-                </a>
+                <router-link class="item" :to="{path:item.href}">
+                  <div class="logo" :class="item.color">
+                    <i class="iconfont" :class="item.icon"></i>
+                  </div>
+                  <div class="logoName">
+                    {{item.logoName}}
+                  </div>
+                </router-link>
             </div>
             <div class="panel"></div>
             <div class="panel"></div>
@@ -61,6 +61,7 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        text-decoration: none;
         .logo {
           height: 100px;
           line-height: 100px;
@@ -72,6 +73,9 @@ export default {
             font-size: 58px;
             color: #fff;
           }
+        }
+        .logoName{
+          color: #333;
         }
       }
     }

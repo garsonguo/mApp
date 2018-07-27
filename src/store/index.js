@@ -17,6 +17,9 @@ export default new Vuex.Store({
     LoginOut () {
       Cookies.remove('loginInfo')
       this.state.auth = false
+    },
+    navShowFlase () {
+      this.state.navShow = false
     }
   }
 })

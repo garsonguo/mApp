@@ -40,32 +40,38 @@
             "id":1,
             "color":"green",
             "icon":"icon-daiban",
-            "logoName":"待办案卷"
+            "logoName":"待办案卷",
+            "href":"/Todo"
         },{
             "id":2,
             "color":"blue",
             "icon":"icon-shouwen",
-            "logoName":"公文收文"
+            "logoName":"公文收文",
+            "href":""
         },{
             "id":3,
             "color":"red",
             "icon":"icon-fawen",
-            "logoName":"公文发文"
+            "logoName":"公文发文",
+            "href":""
         },{
             "id":4,
             "color":"yellow",
             "icon":"icon-yuewen",
-            "logoName":"公共阅文"
+            "logoName":"公共阅文",
+            "href":""
         },{
             "id":5,
             "color":"red",
             "icon":"icon-youxiang",
-            "logoName":"内部邮件"
+            "logoName":"内部邮件",
+            "href":""
         },{
             "id":6,
             "color":"yellow",
             "icon":"icon-jingdianwanfa",
-            "logoName":"政务信息"
+            "logoName":"政务信息",
+            "href":""
         }]
     }
 }

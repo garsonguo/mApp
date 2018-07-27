@@ -6,6 +6,7 @@ import Home from '@/pages/home/Home'
 import Contacts from '@/pages/contacts/Contacts'
 import My from '@/pages/my/My'
 import Login from '@/pages/login/Login'
+import Todo from '@/pages/todo/Todo'
 
 Vue.use(Router)
 
@@ -13,38 +14,55 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      redirect: Login
+      redirect: Home
     },
     {
       path: '/Login',
       name: 'Login',
-      title: '登录',
-      component: Login
+      component: Login,
+      meta: {
+        title: '登录'
+      }
     },
     {
       path: '/Home',
       name: 'Home',
-      title: '首页',
       component: Home,
-      children: [{
-        path: '/ajbl',
-        component: Home
-      }]
+      meta: {
+        title: '首页'
+      }
     },
     {
       path: '/Info',
       name: 'Info',
-      component: Info
+      component: Info,
+      meta: {
+        title: '信息'
+      }
     },
     {
       path: '/Contacts',
       name: 'Contacts',
-      component: Contacts
+      component: Contacts,
+      meta: {
+        title: '通讯'
+      }
     },
     {
       path: '/My',
       name: 'My',
-      component: My
+      component: My,
+      meta: {
+        title: '我的'
+      }
+    },
+    {
+      path: '/Todo',
+      name: 'Todo',
+      component: Todo,
+      meta: {
+        title: '代办案卷'
+      }
     }
   ]
 })

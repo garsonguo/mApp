@@ -28,7 +28,7 @@ export default {
   height: 70px;
   line-height: 70px;
   padding: 0 20px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;/*px*/
   .left{
     float: left;
   }
