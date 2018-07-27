@@ -65,7 +65,7 @@
             "color":"red",
             "icon":"icon-youxiang",
             "logoName":"新闻中心",
-            "href":""
+            "href":"/News"
         },{
             "id":6,
             "color":"yellow",

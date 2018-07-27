@@ -9,6 +9,8 @@ import Login from '@/pages/login/Login'
 import Todo from '@/pages/todo/Todo'
 import Read from '@/pages/read/Read'
 import List from '@/pages/read/components/List'
+import News from '@/pages/news/News'
+import NewsList from '@/pages/news/components/List'
 
 Vue.use(Router)
 
@@ -96,6 +98,23 @@ const router = new Router({
         component: List,
         meta: {
           title: '公共阅文'
+        }
+      }]
+    },
+    {
+      path: '/News',
+      name: 'News',
+      component: News,
+      redirect: '/News/List/1', // 嵌套默认路由
+      meta: {
+        title: '新闻中心'
+      },
+      children: [{
+        path: 'List/:id',
+        name: 'NewsList',
+        component: NewsList,
+        meta: {
+          title: '新闻中心'
         }
       }]
     }
