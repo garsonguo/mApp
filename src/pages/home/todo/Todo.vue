@@ -1,6 +1,6 @@
 <template>
     <div class="todo">
-        <Header :title="title"></Header>
+        <Header :title="title" :path="Home"></Header>
         <search></search>
         <count :countNum="countNum"></count>
         <list :list="list"></list>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Header from '@/common/NavHeader.vue'
 import Search from './components/Search.vue'
 import Count from './components/Count.vue'
 import List from './components/List.vue'

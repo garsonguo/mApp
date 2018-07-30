@@ -1,7 +1,7 @@
 <template>
     <div class="list" ref="wrapper">
         <div>
-            <router-link v-for="item of list" :key="item.id" to="/Timeline">
+            <router-link v-for="item of list" :key="item.id" to="/Flow/Base">
                 <div class="item">
                     <div class="num">
                         <i class="iconfont icon-fapiao"></i>

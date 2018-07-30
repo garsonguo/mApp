@@ -11,7 +11,9 @@ import List from '@/pages/home/read/components/List'
 import News from '@/pages/home/news/News'
 import NewsDetail from '@/pages/home/news/NewsDetail'
 import NewsList from '@/pages/home/news/components/List'
-import Timeline from '@/pages/home/timeline/Timeline'
+import Flow from '@/pages/home/flow/Flow'
+import Timeline from '@/pages/home/flow/components/Timeline'
+import Base from '@/pages/home/flow/components/Base'
 // 通讯录
 import Contacts from '@/pages/contacts/Contacts'
 // 我的
@@ -131,9 +133,19 @@ const router = new Router({
       component: NewsDetail
     },
     {
-      path: '/Timeline',
-      name: 'Timeline',
-      component: Timeline
+      path: '/Flow',
+      name: 'Flow',
+      component: Flow,
+      children: [{
+        path: 'Timeline',
+        name: 'Timeline',
+        component: Timeline
+      },
+      {
+        path: 'Base',
+        name: 'Base',
+        component: Base
+      }]
     }
   ],
   scrollBehavior (to, from, savedPosition) {
