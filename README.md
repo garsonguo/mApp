@@ -57,3 +57,8 @@ https://blog.csdn.net/xdongll/article/details/74295299
 17. vuex中如何做路由跳转
 https://segmentfault.com/q/1010000007333415?_ea=1312601
 注：在commit或者dispatch时，将router作为参数传过去
+18. 组件重复渲染问题，解决方案：监听$router，参见src/pages/news/components/List.vue
+https://blog.csdn.net/zkh_101/article/details/79120548
+https://blog.csdn.net/Clark_Fitz817/article/details/79134944
+19. 异步数据better-scroll不滚动问题
+https://www.imooc.com/wenda/detail/386735

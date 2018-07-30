@@ -1,15 +1,17 @@
 <template>
   <div class="list" ref="wrapper">
     <div>
-      <div class="item" v-for="item of list" :key="item.id">
-        <div class="title">
-          {{item.title}}
+      <router-link v-for="item of list" :key="item.id" :to="{path:'/NewsDetail',query:{id:item.id,backUrl:'/Read/List/1'}}">
+        <div class="item">
+          <div class="title">
+            {{item.title}}
+          </div>
+          <div class="info">
+            <span class="organization">{{item.organization}}</span>
+            <span class="date">{{item.date}}</span>
+          </div>
         </div>
-        <div class="info">
-          <span class="organization">{{item.organization}}</span>
-          <span class="date">{{item.date}}</span>
-        </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -29,6 +31,10 @@ export default {
 
 <style scoped lang='less'>
 .list{
+  a{
+    text-decoration: none;
+    color: #333;
+  }
   position: absolute;
   top: 500px;
   bottom: 0;

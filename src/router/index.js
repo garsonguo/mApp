@@ -10,6 +10,7 @@ import Todo from '@/pages/todo/Todo'
 import Read from '@/pages/read/Read'
 import List from '@/pages/read/components/List'
 import News from '@/pages/news/News'
+import NewsDetail from '@/pages/news/NewsDetail'
 import NewsList from '@/pages/news/components/List'
 
 Vue.use(Router)
@@ -117,8 +118,20 @@ const router = new Router({
           title: '新闻中心'
         }
       }]
+    },
+    {
+      path: '/NewsDetail',
+      name: 'NewsDetail',
+      component: NewsDetail
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
 
 router.beforeEach((to, from, next) => {

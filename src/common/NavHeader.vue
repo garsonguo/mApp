@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div @click="$router.push({path:'/Home'})" class="back">
+        <div @click="routerBack" class="back">
             <i class="iconfont icon-back"></i>
         </div>
         {{title}}
@@ -11,7 +11,20 @@
 export default {
   name: 'NavHeader',
   props: {
-    title: String
+    title: String,
+    path: {
+      default: '/Home'
+    }
+  },
+  watch: {
+    '$route': function (to, from) {
+    }
+  },
+  methods: {
+    routerBack () {
+      const pathUrl = this.path
+      this.$router.push({path: pathUrl})
+    }
   }
 }
 </script>

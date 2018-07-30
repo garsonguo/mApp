@@ -1,20 +1,22 @@
 <template>
   <div class="list" ref="wrapper">
     <div>
-      <div class="item" v-for="item of list" :key="item.id">
-        <div class="info">
-          <div class="title">
-            {{item.title}}
+      <router-link v-for="item of list" :key="item.id" :to="{path:'/NewsDetail',query:{id:item.id,backUrl:'/News/List/1'}}">
+        <div class="item">
+          <div class="info">
+            <div class="title">
+              {{item.title}}
+            </div>
+            <div class="bottom">
+              <span class="unit">{{item.organization}}</span>
+              <span class="date">{{item.date}}</span>
+            </div>
           </div>
-          <div class="bottom">
-            <span class="unit">{{item.organization}}</span>
-            <span class="date">{{item.date}}</span>
+          <div class="img">
+            <img :src="item.img">
           </div>
         </div>
-        <div class="img">
-          <img :src="item.img">
-        </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -44,6 +46,9 @@ export default {
 
 <style scoped lang='less'>
 .list{
+  a{
+    text-decoration: none;
+  }
   position: absolute;
   top: 160px;
   bottom: 0;
@@ -61,6 +66,7 @@ export default {
       position: relative;
       .title{
         line-height: 1.7;
+        color: #333;
       }
       .bottom{
         position: absolute;
