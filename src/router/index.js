@@ -1,17 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Cookies from 'js-cookie'
+// 消息页
 import Info from '@/pages/info/Info'
-import Home from '@/pages/home/Home'
+// 主页
+import Home from '@/pages/home/home/Home'
+import Todo from '@/pages/home/todo/Todo'
+import Read from '@/pages/home/read/Read'
+import List from '@/pages/home/read/components/List'
+import News from '@/pages/home/news/News'
+import NewsDetail from '@/pages/home/news/NewsDetail'
+import NewsList from '@/pages/home/news/components/List'
+import Timeline from '@/pages/home/timeline/Timeline'
+// 通讯录
 import Contacts from '@/pages/contacts/Contacts'
+// 我的
 import My from '@/pages/my/My'
+// 登录页
 import Login from '@/pages/login/Login'
-import Todo from '@/pages/todo/Todo'
-import Read from '@/pages/read/Read'
-import List from '@/pages/read/components/List'
-import News from '@/pages/news/News'
-import NewsDetail from '@/pages/news/NewsDetail'
-import NewsList from '@/pages/news/components/List'
 
 Vue.use(Router)
 
@@ -123,6 +129,11 @@ const router = new Router({
       path: '/NewsDetail',
       name: 'NewsDetail',
       component: NewsDetail
+    },
+    {
+      path: '/Timeline',
+      name: 'Timeline',
+      component: Timeline
     }
   ],
   scrollBehavior (to, from, savedPosition) {

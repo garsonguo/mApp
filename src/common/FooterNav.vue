@@ -20,7 +20,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'FooterNav'
+}
 </script>
 
 <style scoped lang='less'>
