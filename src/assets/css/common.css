@@ -22,3 +22,10 @@
     background-color: #f36aa6;
     border: 1px solid #f36aa6;
 }
+.html.md-theme-default{
+    background-color: #fff;
+}
+html,
+body{
+    color: #333;
+}

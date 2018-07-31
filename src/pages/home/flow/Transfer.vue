@@ -91,7 +91,8 @@ export default {
   methods: {
     handlerAdd (e) {
       const name = e.target.innerText
-      if (this.undertake.indexOf(name)) {
+      const index = this.undertake.indexOf(name)
+      if (index < 0) {
         this.undertake.push(name)
       }
     },
@@ -140,6 +141,12 @@ export default {
       bottom: 0;
       border-right: 1px solid #ddd;
       .list{
+        position: absolute;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        overflow: auto;
         ul>li{
           height: 70px;
           line-height: 70px;
@@ -162,6 +169,12 @@ export default {
       left: 50%;
       bottom: 0;
       .list{
+        position: absolute;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        overflow: auto;
          ul>li{
            height: 70px;
            line-height: 70px;

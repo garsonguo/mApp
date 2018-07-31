@@ -26,7 +26,7 @@ export default {
   name: 'Login',
   data () {
     return {
-      logo: '湖南省国土资源局',
+      logo: 'Xiaobog移动办公App',
       title: '电子政务',
       name: null,
       password: null

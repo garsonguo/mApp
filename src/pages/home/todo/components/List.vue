@@ -80,12 +80,14 @@ export default {
             }
         }
         .title{
-            line-height: 1.5;
+            line-height: 1.7;
             font-size: 28px;/*px*/
+            margin-bottom: 10px;
         }
         .info{
             line-height: 1.7;
-            color: #6f6f6f;
+            font-size: 24px;/*px*/
+            color: #9c9c9c;
         }
     }
 }
