@@ -5,7 +5,7 @@
       <span>0203131hjnjau</span>
     </div>
     <div class="flow-btn">
-      <router-link :to="{path:'Home'}">
+      <router-link :to="{path:'/Transfer'}">
         <i class="iconfont icon-you-copy"></i>
         转移
       </router-link>
@@ -25,7 +25,7 @@ export default {
   line-height: 70px;
   overflow: hidden;
   margin: 10px 0;
-  padding: 0 10px;
+  padding: 0 20px;
   background-color: #f2f2f2;
   font-size: 28px;
   .number{
@@ -36,6 +36,10 @@ export default {
     float: right;
     text-decoration: none;
     color: #333;
+    .icon-you-copy{
+      font-size: 12px;
+      color: #448aff;
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home">
       <Header :title="title"></Header>
       <Swiper class="swiper" :swiperList='swiperList'></Swiper>
       <sub-nav :subNavList='subNavList'></sub-nav>
@@ -52,7 +52,11 @@ export default {
 </script>
 
 <style scoped lang='less'>
-.swiper{
-  margin-top: 70px;
+.home{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 118px;
 }
 </style>

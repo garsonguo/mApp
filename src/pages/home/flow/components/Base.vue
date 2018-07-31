@@ -69,23 +69,29 @@ export default {
 .base{
   .form{
     padding: 20px;
+    font-size: 28px;
     .form-row{
       line-height: 1.7;
       .key{
         display: inline-block;
         width: 20%;
         text-align: right;
+        float: left;
+      }
+      .value{
+        display: inline-block;
+        width: 80%;
       }
     }
   }
   .attachment{
+    font-size: 28px;
     .title{
       height: 70px;
       line-height: 70px;
       margin: 10px 0;
-      padding: 0 10px;
+      padding: 0 20px;
       background-color: #f2f2f2;
-      font-size: 28px;
     }
     ul{
       padding:10px 20px;

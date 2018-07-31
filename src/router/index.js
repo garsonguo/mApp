@@ -14,6 +14,8 @@ import NewsList from '@/pages/home/news/components/List'
 import Flow from '@/pages/home/flow/Flow'
 import Timeline from '@/pages/home/flow/components/Timeline'
 import Base from '@/pages/home/flow/components/Base'
+import Transfer from '@/pages/home/flow/Transfer'
+
 // 通讯录
 import Contacts from '@/pages/contacts/Contacts'
 // 我的
@@ -146,6 +148,14 @@ const router = new Router({
         name: 'Base',
         component: Base
       }]
+    },
+    {
+      path: '/Transfer',
+      name: 'Transfer',
+      component: Transfer,
+      meta: {
+        title: '移交'
+      }
     }
   ],
   scrollBehavior (to, from, savedPosition) {

@@ -43,6 +43,10 @@ export default {
 
 <style scoped lang='less'>
 .list{
-  margin-top: 70px;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 118px;
 }
 </style>

@@ -1,8 +1,10 @@
 <template>
-    <div>
+    <div class="my">
         <common-header :title='title'></common-header>
-        <my-info></my-info>
-        <my-list></my-list>
+        <div class="body">
+          <my-info></my-info>
+          <my-list></my-list>
+        </div>
     </div>
 </template>
 
@@ -26,4 +28,13 @@ export default {
 </script>
 
 <style scoped lang='less'>
+.my{
+  .body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 118px;
+  }
+}
 </style>

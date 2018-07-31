@@ -31,7 +31,8 @@ export default {
     return {
       title: '',
       list: [],
-      countNum: ''
+      countNum: '',
+      Home: '/Home'
     }
   },
   mounted () {

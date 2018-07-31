@@ -43,8 +43,7 @@ export default {
     this.scroll = new Bscroll(this.$refs.wrapper)
   },
   data () {
-    return {
-    }
+    return {}
   }
 }
 </script>
