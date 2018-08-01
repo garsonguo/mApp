@@ -19,22 +19,26 @@
             "id":1,
             "logo":"10",
             "logoName":"待我办理",
-            "isIcon":"noIcon"
+            "isIcon":"noIcon",
+            "path":""
         },{
             "id":2,
             "logo":"4",
             "logoName":"新邮件",
-            "isIcon":"noIcon"
+            "isIcon":"noIcon",
+            "path":""
         },{
             "id":3,
             "logo":"iconfont icon-shijian",
             "logoName":"登录时间",
-            "isIcon":"isIcon"
+            "isIcon":"isIcon",
+            "path":""
         },{
             "id":4,
             "logo":"iconfont icon-rili",
             "logoName":"日程安排",
-            "isIcon":"isIcon"
+            "isIcon":"isIcon",
+            "path":"/Schedule"
         }],
         "commonNavList":[{
             "id":1,

@@ -15,6 +15,8 @@ import Flow from '@/pages/home/flow/Flow'
 import Timeline from '@/pages/home/flow/components/Timeline'
 import Base from '@/pages/home/flow/components/Base'
 import Transfer from '@/pages/home/flow/Transfer'
+import Schedule from '@/pages/home/schedule/Schedule'
+import AddSchedule from '@/pages/home/schedule/AddSchedule'
 
 // 通讯录
 import Contacts from '@/pages/contacts/Contacts'
@@ -155,6 +157,22 @@ const router = new Router({
       component: Transfer,
       meta: {
         title: '移交'
+      }
+    },
+    {
+      path: '/Schedule',
+      name: 'Schedule',
+      component: Schedule,
+      meta: {
+        title: '日程安排'
+      }
+    },
+    {
+      path: '/AddSchedule',
+      name: 'AddSchedule',
+      component: AddSchedule,
+      meta: {
+        title: '增加日程'
       }
     }
   ],

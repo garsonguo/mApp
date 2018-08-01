@@ -1,9 +1,12 @@
 <template>
     <div class="header">
         <div @click="routerBack" class="back">
-            <i class="iconfont icon-back"></i>
+          <i class="iconfont icon-back"></i>
         </div>
         {{title}}
+        <div v-show="show" class="add" @click="add">
+          <i class="iconfont icon-dongtai"></i>
+        </div>
     </div>
 </template>
 
@@ -14,6 +17,9 @@ export default {
     title: String,
     path: {
       default: '/Home'
+    },
+    show: {
+      default: false
     }
   },
   watch: {
@@ -24,6 +30,9 @@ export default {
     routerBack () {
       const pathUrl = this.path
       this.$router.push({path: pathUrl})
+    },
+    add () {
+      this.$router.push({path: './AddSchedule'})
     }
   }
 }
@@ -43,9 +52,15 @@ export default {
     z-index: 1;
     background-color: #fff;
     .back{
-        font-size: 36px;/*px*/
-        position: absolute;
-        left: 20px;
+      font-size: 36px;/*px*/
+      position: absolute;
+      left: 20px;
+    }
+    .add{
+      font-size: 36px;/*px*/
+      position: absolute;
+      right: 20px;
+      top: 0;
     }
 }
 </style>

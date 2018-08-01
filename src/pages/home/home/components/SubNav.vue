@@ -1,10 +1,12 @@
 <template>
     <div class="subNav">
         <div class="panel" v-for="item of subNavList" :key="item.id">
-            <component v-bind:is="item.isIcon" :logo=item.logo></component>
-            <div class="logoName">
-                {{item.logoName}}
-            </div>
+            <router-link :to="{path:item.path}">
+                <component v-bind:is="item.isIcon" :logo=item.logo></component>
+                <div class="logoName">
+                    {{item.logoName}}
+                </div>
+            </router-link>
         </div>
     </div>
 </template>

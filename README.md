@@ -64,3 +64,8 @@ https://blog.csdn.net/Clark_Fitz817/article/details/79134944
 https://www.imooc.com/wenda/detail/386735
 20. 流程步骤、时间线插件
 https://github.com/luyilin/vue-cute-timeline
+21. 日历控件
+https://github.com/jinzhe/vue-calendar
+现在用的介个：https://www.cnblogs.com/zhengweijie/p/7289764.html
+22. 时间处理插件moment
+npm install moment --save-dev
