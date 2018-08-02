@@ -1,181 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Cookies from 'js-cookie'
-// 消息页
-import Info from '@/pages/info/Info'
-// 主页
-import Home from '@/pages/home/home/Home'
-import Todo from '@/pages/home/todo/Todo'
-import Read from '@/pages/home/read/Read'
-import List from '@/pages/home/read/components/List'
-import News from '@/pages/home/news/News'
-import NewsDetail from '@/pages/home/news/NewsDetail'
-import NewsList from '@/pages/home/news/components/List'
-import Flow from '@/pages/home/flow/Flow'
-import Timeline from '@/pages/home/flow/components/Timeline'
-import Base from '@/pages/home/flow/components/Base'
-import Transfer from '@/pages/home/flow/Transfer'
-import Schedule from '@/pages/home/schedule/Schedule'
-import AddSchedule from '@/pages/home/schedule/AddSchedule'
 
-// 通讯录
-import Contacts from '@/pages/contacts/Contacts'
-// 我的
-import My from '@/pages/my/My'
 // 登录页
-import Login from '@/pages/login/Login'
+import loginRouter from './loginRouter'
+// 消息页
+import infoRuter from './infoRouter'
+// 通讯录
+import contactsRouter from './contactsRouter'
+// 我的
+import myRouter from './myRouter'
+// 主页
+import homeRouter from './homeRouter'
 
 Vue.use(Router)
 
+// 拼接路由
+let routers = [loginRouter, infoRuter, contactsRouter, myRouter]
+routers.push(...homeRouter)
+
 const router = new Router({
-  routes: [
-    {
-      path: '/',
-      redirect: Home
-    },
-    {
-      path: '/Login',
-      name: 'Login',
-      component: Login,
-      meta: {
-        title: '登录'
-      }
-    },
-    {
-      path: '/Home',
-      name: 'Home',
-      component: Home,
-      meta: {
-        title: '首页'
-      }
-    },
-    {
-      path: '/Info',
-      name: 'Info',
-      component: Info,
-      meta: {
-        title: '信息'
-      }
-    },
-    {
-      path: '/Contacts',
-      name: 'Contacts',
-      component: Contacts,
-      meta: {
-        title: '通讯'
-      }
-    },
-    {
-      path: '/My',
-      name: 'My',
-      component: My,
-      meta: {
-        title: '我的'
-      }
-    },
-    {
-      path: '/Todo/1',
-      name: 'Todo',
-      component: Todo,
-      meta: {
-        title: '代办案卷'
-      }
-    },
-    {
-      path: '/Todo/2',
-      name: 'Todo',
-      component: Todo,
-      meta: {
-        title: '公共收文'
-      }
-    },
-    {
-      path: '/Todo/3',
-      name: 'Todo',
-      component: Todo,
-      meta: {
-        title: '公共发文'
-      }
-    },
-    {
-      path: '/Read',
-      name: 'Read',
-      component: Read,
-      redirect: '/Read/List/1', // 嵌套默认路由
-      meta: {
-        title: '公共阅文'
-      },
-      children: [{
-        path: 'List/:id',
-        name: 'List',
-        component: List,
-        meta: {
-          title: '公共阅文'
-        }
-      }]
-    },
-    {
-      path: '/News',
-      name: 'News',
-      component: News,
-      redirect: '/News/List/1', // 嵌套默认路由
-      meta: {
-        title: '新闻中心'
-      },
-      children: [{
-        path: 'List/:id',
-        name: 'NewsList',
-        component: NewsList,
-        meta: {
-          title: '新闻中心'
-        }
-      }]
-    },
-    {
-      path: '/NewsDetail',
-      name: 'NewsDetail',
-      component: NewsDetail
-    },
-    {
-      path: '/Flow',
-      name: 'Flow',
-      component: Flow,
-      children: [{
-        path: 'Timeline',
-        name: 'Timeline',
-        component: Timeline
-      },
-      {
-        path: 'Base',
-        name: 'Base',
-        component: Base
-      }]
-    },
-    {
-      path: '/Transfer',
-      name: 'Transfer',
-      component: Transfer,
-      meta: {
-        title: '移交'
-      }
-    },
-    {
-      path: '/Schedule',
-      name: 'Schedule',
-      component: Schedule,
-      meta: {
-        title: '日程安排'
-      }
-    },
-    {
-      path: '/AddSchedule',
-      name: 'AddSchedule',
-      component: AddSchedule,
-      meta: {
-        title: '增加日程'
-      }
-    }
-  ],
+  routes: routers,
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
