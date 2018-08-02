@@ -8,7 +8,7 @@
 <script>
 import Header from '../../common/CommonHeader.vue'
 import List from './components/List.vue'
-import axios from 'axios'
+import {fetchList} from '@/api/fetch'
 export default {
   name: 'Info',
   components: {
@@ -26,8 +26,7 @@ export default {
   },
   methods: {
     getInfoList () {
-      axios.get('/api/info.json')
-        .then(this.getHomeInfoList)
+      fetchList('/api/info.json').then(this.getHomeInfoList)
     },
     getHomeInfoList (res) {
       res = res.data

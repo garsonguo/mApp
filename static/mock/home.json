@@ -24,9 +24,9 @@
         },{
             "id":2,
             "logo":"4",
-            "logoName":"新邮件",
+            "logoName":"新闻",
             "isIcon":"noIcon",
-            "path":""
+            "path":"/News/List/1"
         },{
             "id":3,
             "logo":"iconfont icon-shijian",
