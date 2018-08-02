@@ -1,6 +1,6 @@
 <template>
     <div class="todo">
-        <Header :title="title" :path="Home"></Header>
+        <Header :title="title"></Header>
         <search></search>
         <count :countNum="countNum"></count>
         <list :list="list"></list>

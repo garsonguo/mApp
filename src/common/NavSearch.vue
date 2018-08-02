@@ -18,7 +18,6 @@ export default {
 
 <style scoped lang='less'>
 .search {
-  padding: 10px 0;
   position: relative;
   height: 70px;
   line-height: 70px;

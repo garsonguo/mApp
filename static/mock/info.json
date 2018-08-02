@@ -1,26 +1,28 @@
 {
     "ret":true,
     "data":{
-        "title":"Xiabog移动办公平台"
-        ,
+        "title":"Xiabog移动办公平台",
         "infoList":[{
             "id":1,
             "icon":"iconfont icon-daiban red",
             "type":"待办案卷",
             "title":"湖南将全面完成某些类型的整顿互动湖南将全面完成某些类型的整顿互动",
-            "date":"2018-07-20"
+            "date":"2018-07-20",
+            "path":"/Flow/Base"
         },{
             "id":2,
             "icon":"iconfont icon-dianhua green",
             "type":"会议通知",
             "title":"湖南将全面完成某些类型的整顿",
-            "date":"2018-07-20"
+            "date":"2018-07-20",
+            "path":"/Schedule"
         },{
             "id":3,
             "icon":"iconfont icon-hangcheng blue",
             "type":"日程安排",
             "title":"201开会",
-            "date":"2018-07-20"
+            "date":"2018-07-20",
+            "path":"/Schedule"
         }]
     }
 }

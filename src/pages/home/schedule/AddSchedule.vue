@@ -30,8 +30,8 @@
       </div>
     </div>
     <div class="footer">
-        <van-datetime-picker   v-show="startShow"  v-model="currentDate"  type="datetime"  :min-date="minDate"  :max-date="maxDate"  @confirm="onStartConfirm"  @cancel="cancel"  />
-        <van-datetime-picker   v-show="endShow"  v-model="currentDate"  type="datetime"  :min-date="minDate"  :max-date="maxDate"  @confirm="onEndConfirm"  @cancel="cancel"  />
+        <van-datetime-picker @focus="handlerFocus" v-show="startShow"  v-model="currentDate"  type="datetime"  :min-date="minDate"  :max-date="maxDate"  @confirm="onStartConfirm"  @cancel="cancel"  />
+        <van-datetime-picker @focus="handlerFocus" v-show="endShow"  v-model="currentDate"  type="datetime"  :min-date="minDate"  :max-date="maxDate"  @confirm="onEndConfirm"  @cancel="cancel"  />
       </div>
   </div>
 </template>
@@ -102,6 +102,9 @@ export default {
       if (res.ret && res.data) {
         this.list = res.data.list
       }
+    },
+    handlerFocus () {
+      document.activeElement.blur()
     }
   }
 }

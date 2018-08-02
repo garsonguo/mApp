@@ -1,18 +1,20 @@
 <template>
     <div class="list">
         <div class="item" v-for="item of list" :key="item.id">
-            <div class="left">
-                <i :class=item.icon></i>
-            </div>
-            <div class="right">
-                <div class="type">
-                    {{item.type}}
+            <router-link :to="{path:item.path}">
+                <div class="left">
+                    <i :class=item.icon></i>
                 </div>
-                <div class="info">
-                    <span class="title">{{item.title}}</span>
-                    <span class="date">{{item.date}}</span>
+                <div class="right">
+                    <div class="type">
+                        {{item.type}}
+                    </div>
+                    <div class="info">
+                        <span class="title">{{item.title}}</span>
+                        <span class="date">{{item.date}}</span>
+                    </div>
                 </div>
-            </div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -40,6 +42,9 @@ export default {
   .item {
     overflow: hidden;
     height: 148px;
+    a{
+        color: #333;
+    }
     .left {
       float: left;
       width: 20%;
