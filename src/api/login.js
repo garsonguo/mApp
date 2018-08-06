@@ -11,3 +11,10 @@ export function loginByUsername (name, password) {
     data
   })
 }
+
+export function loginOut () {
+  return request({
+    url: '/login/logout',
+    method: 'post'
+  })
+}
