@@ -15,14 +15,13 @@
 </template>
 
 <script>
-import Cookies from 'js-cookie'
 export default {
   name: 'Login',
   data () {
     return {
       logo: 'Xiaobog移动办公App',
       title: '电子政务',
-      name: null,
+      name: 'admin',
       password: null,
       errorName: '',
       errorPass: ''
@@ -35,9 +34,12 @@ export default {
         password: this.password
       }
       if (loginInfo.name && loginInfo.password) {
-        Cookies.set('loginInfo', loginInfo)
-        this.$router.push({
-          name: 'Home'
+        this.$store.dispatch('LoginIn', loginInfo).then((result) => {
+          this.$router.push({
+            name: 'Home'
+          })
+        }).catch((err) => {
+          console.log(err)
         })
       } else if (!loginInfo.name) {
         this.errorName = '请输入账号'

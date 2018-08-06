@@ -10,6 +10,7 @@ import fastClick from 'fastclick'
 import { MdSteppers, MdButton } from 'vue-material/dist/components'
 import Vant from 'vant'
 import './assets/js/validate'
+import './mock'
 
 import 'swiper/dist/css/swiper.css'
 import 'vue-material/dist/vue-material.min.css'

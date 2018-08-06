@@ -1,0 +1,9 @@
+{
+  "ret":true,
+  "data":{
+    "admin":{
+      "roles":["admin"],
+      "token":"admin"
+    }
+  }
+}
