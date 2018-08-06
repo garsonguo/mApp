@@ -73,3 +73,6 @@ npm install moment --save-dev
 https://www.cnblogs.com/HKCC/p/6083575.html
 24. 日期阻止虚拟键盘谈起
 https://blog.csdn.net/qq_24147051/article/details/52958610
+25. mockjs mock数据模拟
+https://www.cnblogs.com/jasonwang2y60/p/7302449.html
+https://github.com/nuysoft/Mock/wiki/Getting-Started

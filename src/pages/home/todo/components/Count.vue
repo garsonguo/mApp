@@ -10,7 +10,7 @@
 export default {
   name: 'Count',
   props: {
-    countNum: String
+    countNum: Number
   }
 }
 </script>

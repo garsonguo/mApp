@@ -23,7 +23,7 @@
 <script>
 import Header from '@/common/NavHeader.vue'
 import Bscroll from 'better-scroll'
-import axios from 'axios'
+import { getDetail } from '@/api/news'
 export default {
   name: 'NewsDetail',
   components: {
@@ -55,12 +55,10 @@ export default {
   },
   methods: {
     getDetail (id) {
-      axios.get('/api/newsDetail.json?id=' + id)
-        .then(this.getDate)
+      getDetail().then(this.getDate)
     },
     getDate (res) {
-      res = res.data
-      if (res.ret && res.data) {
+      if (res.data) {
         this.htitle = res.data.title
         this.date = res.data.date
         this.unit = res.data.unit

@@ -12,7 +12,7 @@ import Header from '@/common/NavHeader.vue'
 import Search from './components/Search.vue'
 import Count from './components/Count.vue'
 import List from './components/List.vue'
-import axios from 'axios'
+import { fetchList } from '@/api/todo'
 export default {
   name: 'Todo',
   components: {
@@ -31,7 +31,7 @@ export default {
     return {
       title: '',
       list: [],
-      countNum: '',
+      countNum: 0,
       Home: '/Home'
     }
   },
@@ -41,12 +41,10 @@ export default {
   methods: {
     // 获取数据
     getList () {
-      axios.get('/api/todo.json')
-        .then(this.getTodoList)
+      fetchList().then(this.getTodoList)
     },
     getTodoList (res) {
-      res = res.data
-      if (res.ret && res.data) {
+      if (res.data) {
         this.list = res.data.list
         this.countNum = res.data.count
       }

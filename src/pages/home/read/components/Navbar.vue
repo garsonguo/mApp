@@ -19,7 +19,7 @@
 
 <script>
 import Count from '@/common/NavCount.vue'
-import axios from 'axios'
+import { fetchList } from '@/api/read'
 export default {
   name: 'Navbar',
   props: {
@@ -30,7 +30,7 @@ export default {
   },
   data () {
     return {
-      countNum: '0',
+      countNum: 0,
       list: []
     }
   },
@@ -41,12 +41,10 @@ export default {
     getList () {
       // 可以根据获取的id参数作为获取不同数值的标识传给服务获取相应数值
       // const id = this.$router.history.current.params.id
-      axios.get('/api/readList.json')
-        .then(this.getReadList)
+      fetchList().then(this.getReadList)
     },
     getReadList (res) {
-      res = res.data
-      if (res.ret && res.data) {
+      if (res.data) {
         this.countNum = res.data.count
         this.list = res.data.list
       }

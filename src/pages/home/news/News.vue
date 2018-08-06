@@ -11,7 +11,7 @@
 
 <script>
 import Header from '@/common/NavHeader.vue'
-import axios from 'axios'
+import { fetchList } from '@/api/news'
 export default {
   name: 'News',
   components: {
@@ -33,12 +33,12 @@ export default {
   },
   methods: {
     getList () {
-      axios.get('/api/news.json')
-        .then(this.getNewsList)
+      // axios.get('/api/news.json')
+      //   .then(this.getNewsList)
+      fetchList().then(this.getNewsList)
     },
     getNewsList (res) {
-      res = res.data
-      if (res.ret && res.data) {
+      if (res.data) {
         this.list = res.data.list
       }
     }
