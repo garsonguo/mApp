@@ -10,7 +10,7 @@
 import Header from '@/common/NavHeader.vue'
 import List from './components/List.vue'
 import calendar from './components/calendar.vue'
-import axios from 'axios'
+import { fetchList } from '@/api/schedule'
 export default {
   name: 'Schedule',
   components: {
@@ -44,12 +44,10 @@ export default {
   },
   methods: {
     getList () {
-      axios.get('/api/schedule.json')
-        .then(this.getData)
+      fetchList().then(this.getData)
     },
     getData (res) {
-      res = res.data
-      if (res.ret && res.data) {
+      if (res.data) {
         this.list = res.data.list
       }
     }
