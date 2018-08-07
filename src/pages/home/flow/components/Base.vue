@@ -4,50 +4,44 @@
     <div class="form">
       <div class="form-row">
         <span class="key">案卷编号：</span>
-        <span class="value">H231293123129</span>
+        <span class="value">{{ajbh}}</span>
       </div>
       <div class="form-row">
         <span class="key">公文标题：</span>
-        <span class="value">站那个有：暗示安徽的哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+        <span class="value">{{gwbt}}</span>
       </div>
       <div class="form-row">
         <span class="key">来文单位：</span>
-        <span class="value">某某办公厅</span>
+        <span class="value">{{lwdw}}</span>
       </div>
       <div class="form-row">
         <span class="key">文号：</span>
-        <span class="value">国土资源函【2018】320号</span>
+        <span class="value">{{wh}}</span>
       </div>
       <div class="form-row">
         <span class="key">编号：</span>
-        <span class="value">F-2131</span>
+        <span class="value">{{bh}}</span>
       </div>
       <div class="form-row">
         <span class="key">收件单位：</span>
-        <span class="value">办公室</span>
+        <span class="value">{{sjdw}}</span>
       </div>
       <div class="form-row">
         <span class="key">收件人：</span>
-        <span class="value">周婷</span>
+        <span class="value">{{sjr}}</span>
       </div>
       <div class="form-row">
         <span class="key">收件时间：</span>
-        <span class="value">2018-07-30</span>
+        <span class="value">{{sjsj}}</span>
       </div>
     </div>
     <div class="attachment">
       <div class="title">附件列表</div>
       <ul>
-        <li>
+        <li v-for="item of fjList" :key="item.id">
           <router-link to="/Home">
             <i class="iconfont icon-fapiao"></i>
-            哈哈哈哈哈哈哈哈哈哈哈哈哈哈.pdf
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/Home">
-            <i class="iconfont icon-fapiao"></i>
-            哈哈哈哈哈哈哈哈哈哈哈哈哈哈.pdf
+            {{item.name}}
           </router-link>
         </li>
       </ul>
@@ -57,10 +51,44 @@
 
 <script>
 import FlowHeader from './FlowHeader.vue'
+import { getFlow } from '@/api/flow'
 export default {
   name: 'Base',
   components: {
     FlowHeader
+  },
+  data () {
+    return {
+      ajbh: '',
+      gwbt: '',
+      lwdw: '',
+      wh: '',
+      bh: '',
+      sjdw: '',
+      sjr: '',
+      sjsj: '',
+      fjList: []
+    }
+  },
+  mounted () {
+    this.getFlowDetail()
+  },
+  methods: {
+    getFlowDetail () {
+      getFlow().then((result) => {
+        this.ajbh = result.data.ajbh
+        this.gwbt = result.data.gwbt
+        this.lwdw = result.data.lwdw
+        this.wh = result.data.wh
+        this.bh = result.data.bh
+        this.sjdw = result.data.sjdw
+        this.sjr = result.data.sjr
+        this.sjsj = result.data.sjsj
+        this.fjList = result.data.fjList
+      }).catch((err) => {
+        console.log(err)
+      })
+    }
   }
 }
 </script>

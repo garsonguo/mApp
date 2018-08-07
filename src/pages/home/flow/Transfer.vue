@@ -61,7 +61,7 @@
 <script>
 import Header from '@/common/NavHeader.vue'
 import FlowHeader from './components/FlowHeader.vue'
-import axios from 'axios'
+import { getTransfer } from '@/api/flow'
 export default {
   name: 'Transfer',
   components: {
@@ -104,12 +104,12 @@ export default {
       }
     },
     getList () {
-      axios.get('/api/transfor.json')
-        .then(this.getData)
+      // axios.get('/api/transfor.json')
+      //   .then(this.getData)
+      getTransfer().then(this.getData)
     },
     getData (res) {
-      res = res.data
-      if (res.ret && res.data) {
+      if (res.data) {
         this.officeList = res.data.officeList
         this.archiveList = res.data.archiveList
         this.assistingList = res.data.assistingList

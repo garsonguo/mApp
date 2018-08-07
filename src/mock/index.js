@@ -4,6 +4,7 @@ import todoAPI from './todo'
 import readAPI from './read'
 import newsAPI from './news'
 import scheduleAPI from './schedule'
+import flowAPI from './flow'
 // 登录相关
 Mock.mock(/\/login\/login/, 'post', loginAPI.loginByUsername)
 Mock.mock(/\/login\/logout/, 'post', loginAPI.logout)
@@ -18,4 +19,8 @@ Mock.mock(/\/news\/getList/, 'get', newsAPI.getList)
 Mock.mock(/\/news\/getDetail/, 'get', newsAPI.getDetail)
 // 日程
 Mock.mock(/\/schedule\/getList/, 'get', scheduleAPI.getList)
+
+// 流程
+Mock.mock(/\/flow\/getFlow/, 'get', flowAPI.getFlow)
+Mock.mock(/\/flow\/getTransfer/, 'get', flowAPI.getTransfer)
 export default Mock
