@@ -13,7 +13,7 @@
       </div>
     </div>
     <Count :countNum="countNum"></Count>
-    <router-view :list="list"></router-view>
+    <router-view :list="list" @refresh='refreshList' @loadMore='loadMore'></router-view>
   </div>
 </template>
 
@@ -31,7 +31,11 @@ export default {
   data () {
     return {
       countNum: 0,
-      list: []
+      list: [],
+      listQuery: {
+        page: 1,
+        limit: 10
+      }
     }
   },
   mounted () {
@@ -41,13 +45,28 @@ export default {
     getList () {
       // 可以根据获取的id参数作为获取不同数值的标识传给服务获取相应数值
       // const id = this.$router.history.current.params.id
-      fetchList().then(this.getReadList)
+      fetchList(this.listQuery).then(this.getReadList)
     },
     getReadList (res) {
       if (res.data) {
-        this.countNum = res.data.count
-        this.list = res.data.list
+        if (this.list.length === 0) {
+          this.list = res.data.list
+          this.countNum = res.data.count
+        } else {
+          this.list.push(...res.data.list)
+        }
+        setTimeout(() => {
+          this.loading = false
+        }, 5000)
       }
+    },
+    refreshList () {
+      this.getList()
+    },
+    loadMore (scroll) {
+      this.listQuery.page += 1
+      this.getList()
+      scroll.refresh()
     }
   }
 }

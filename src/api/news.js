@@ -1,9 +1,10 @@
 import request from '@/utils/request.js'
 
-export function fetchList () {
+export function fetchList (query) {
   return request({
     url: '/news/getList',
-    method: 'get'
+    method: 'get',
+    params: query
   })
 }
 

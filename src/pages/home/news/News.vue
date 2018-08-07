@@ -27,7 +27,11 @@ export default {
   data () {
     return {
       list: [],
-      loading: false
+      loading: false,
+      listQuery: {
+        page: 1,
+        limit: 10
+      }
     }
   },
   mounted () {
@@ -36,11 +40,16 @@ export default {
   methods: {
     getList () {
       this.loading = true
-      fetchList().then(this.getNewsList)
+      fetchList(this.listQuery).then(this.getNewsList)
     },
     getNewsList (res) {
       if (res.data) {
-        this.list = res.data.list
+        if (this.list.length === 0) {
+          this.list = res.data.list
+          this.countNum = res.data.count
+        } else {
+          this.list.push(...res.data.list)
+        }
         setTimeout(() => {
           this.loading = false
         }, 5000)
@@ -50,6 +59,8 @@ export default {
       this.getList()
     },
     loadMore (scroll) {
+      this.listQuery.page += 1
+      this.getList()
       scroll.refresh()
     }
   }
