@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="img">
-            <img :src="item.img">
+            <img v-lazy="item.img">
           </div>
         </div>
       </router-link>

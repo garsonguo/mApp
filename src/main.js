@@ -11,6 +11,7 @@ import { MdSteppers, MdButton } from 'vue-material/dist/components'
 import Vant from 'vant'
 import './assets/js/validate'
 import './mock'
+import VueLazyLoad from 'vue-lazyload'
 
 import 'swiper/dist/css/swiper.css'
 import 'vue-material/dist/vue-material.min.css'
@@ -28,6 +29,10 @@ Vue.use(VueAwesomeSwiper)
 Vue.use(MdSteppers)
 Vue.use(MdButton)
 Vue.use(Vant)
+Vue.use(VueLazyLoad, {
+  error: './static/error.png',
+  loading: './static/loading.png'
+})
 fastClick.attach(document.body)
 
 /* eslint-disable no-new */

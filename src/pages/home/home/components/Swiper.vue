@@ -4,7 +4,7 @@
             <!-- slides -->
             <swiper-slide v-for="item of swiperLists" :key="item.id">
                 <a href="#">
-                    <img :src=item.img>
+                    <img v-lazy=item.img>
                 </a>
             </swiper-slide>
             <!-- Optional controls -->
