@@ -1,9 +1,10 @@
 <template>
     <div class="todo">
+        <van-loading v-show="loading" color="black" />
         <Header :title="title"></Header>
         <search></search>
         <count :countNum="countNum"></count>
-        <list :list="list"></list>
+        <list :list="list" @refresh='refreshList' @loadMore='loadMore'></list>
     </div>
 </template>
 
@@ -32,7 +33,8 @@ export default {
       title: '',
       list: [],
       countNum: 0,
-      Home: '/Home'
+      Home: '/Home',
+      loading: false
     }
   },
   mounted () {
@@ -41,13 +43,23 @@ export default {
   methods: {
     // 获取数据
     getList () {
+      this.loading = true
       fetchList().then(this.getTodoList)
     },
     getTodoList (res) {
       if (res.data) {
         this.list = res.data.list
         this.countNum = res.data.count
+        setTimeout(() => {
+          this.loading = false
+        }, 5000)
       }
+    },
+    refreshList () {
+      this.getList()
+    },
+    loadMore (scroll) {
+      scroll.refresh()
     }
   }
 }
