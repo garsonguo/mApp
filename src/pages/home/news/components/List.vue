@@ -33,12 +33,33 @@ export default {
     this.$router.app.$options.store.state.navShow = false
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scrollFn()
   },
   watch: {
     '$route': function (to, from) {
       // 共用组件时   刷新问题
       this.$router.app.$options.store.state.navShow = false
+    }
+  },
+  methods: {
+    scrollFn () {
+      this.$nextTick(() => {
+        if (!this.scroll) {
+          this.scroll = new Bscroll(this.$refs.wrapper)
+        } else {
+          this.scroll.refresh()
+        }
+        this.scroll.on('touchEnd', (pos) => {
+          if (pos.y > 50) {
+            console.log('下拉刷新')
+            this.$emit('refresh')
+          }
+          if (this.scroll.maxScrollY > pos.y + 10) {
+            console.log('加载更多')
+            this.$emit('loadMore', this.scroll)
+          }
+        })
+      })
     }
   }
 }

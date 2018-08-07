@@ -1,11 +1,12 @@
 <template>
   <div class="news">
+    <van-loading v-show="loading" color="black" />
     <Header :title="title"></Header>
     <div class="nav">
       <router-link to="/News/List/1" exact>图片新闻</router-link>
       <router-link to="/News/List/2">单位新闻</router-link>
     </div>
-    <router-view :list="list"></router-view>
+    <router-view :list="list" @refresh='refreshList' @loadMore='loadMore'></router-view>
   </div>
 </template>
 
@@ -25,7 +26,8 @@ export default {
   },
   data () {
     return {
-      list: []
+      list: [],
+      loading: false
     }
   },
   mounted () {
@@ -33,14 +35,22 @@ export default {
   },
   methods: {
     getList () {
-      // axios.get('/api/news.json')
-      //   .then(this.getNewsList)
+      this.loading = true
       fetchList().then(this.getNewsList)
     },
     getNewsList (res) {
       if (res.data) {
         this.list = res.data.list
+        setTimeout(() => {
+          this.loading = false
+        }, 5000)
       }
+    },
+    refreshList () {
+      this.getList()
+    },
+    loadMore (scroll) {
+      scroll.refresh()
     }
   }
 }

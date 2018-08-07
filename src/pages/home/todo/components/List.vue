@@ -43,9 +43,7 @@ export default {
     this.scrollFn()
   },
   data () {
-    return {
-      loading: true
-    }
+    return {}
   },
   methods: {
     scrollFn () {

@@ -1,8 +1,9 @@
 <template>
   <div class="read">
+    <van-loading v-show="loading" color="black" />
     <Header :title="title"></Header>
     <Search></Search>
-    <Navbar :navList="navList"></Navbar>
+    <Navbar :navList="navList" @refresh='refreshList' @loadMore='loadMore'></Navbar>
   </div>
 </template>
 
@@ -26,7 +27,8 @@ export default {
   },
   data () {
     return {
-      navList: []
+      navList: [],
+      loading: false
     }
   },
   mounted () {
@@ -34,6 +36,7 @@ export default {
   },
   methods: {
     getNavList () {
+      this.loading = true
       axios.get('/api/read.json')
         .then(this.getList)
     },
@@ -41,7 +44,16 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         this.navList = res.data.navList
+        setTimeout(() => {
+          this.loading = false
+        }, 5000)
       }
+    },
+    refreshList () {
+      this.getList()
+    },
+    loadMore (scroll) {
+      scroll.refresh()
     }
   }
 }

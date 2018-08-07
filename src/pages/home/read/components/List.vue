@@ -24,7 +24,28 @@ export default {
     list: Array
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scrollFn()
+  },
+  methods: {
+    scrollFn () {
+      this.$nextTick(() => {
+        if (!this.scroll) {
+          this.scroll = new Bscroll(this.$refs.wrapper)
+        } else {
+          this.scroll.refresh()
+        }
+        this.scroll.on('touchEnd', (pos) => {
+          if (pos.y > 50) {
+            console.log('下拉刷新')
+            this.$emit('refresh')
+          }
+          if (this.scroll.maxScrollY > pos.y + 10) {
+            console.log('加载更多')
+            this.$emit('loadMore', this.scroll)
+          }
+        })
+      })
+    }
   }
 }
 </script>
